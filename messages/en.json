@@ -1,0 +1,26 @@
+{
+  "common": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "tickets": {
+    "create": "Create Ticket",
+    "list": "My Tickets",
+    "subject": "Subject",
+    "message": "Message"
+  },
+  "nav": {
+    "home": "Home",
+    "myTickets": "My Tickets",
+    "login": "Login"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard"
+  }
+}
+

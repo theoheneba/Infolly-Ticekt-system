@@ -1,0 +1,14 @@
+{
+  "common": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "tickets": {
+    "create": "Crear Ticket",
+    "list": "Mis Tickets",
+    "subject": "Asunto",
+    "message": "Mensaje"
+  }
+}
+
