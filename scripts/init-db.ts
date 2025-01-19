@@ -2,8 +2,13 @@ import mysql from 'mysql2/promise';
 import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: `${__dirname}/../.env` });
 
 const dbConfig = {
   host: process.env.MYSQL_HOST,
@@ -16,7 +21,11 @@ async function initDatabase() {
   let connection;
 
   try {
+    console.log('Database configuration:', JSON.stringify({ ...dbConfig, password: '[REDACTED]' }, null, 2));
+    console.log('Attempting to connect to the database...');
+
     connection = await mysql.createConnection(dbConfig);
+    console.log('Successfully connected to the database');
 
     // Create users table
     await connection.query(`
@@ -162,6 +171,11 @@ async function initDatabase() {
     console.log('Database initialization completed successfully');
   } catch (error) {
     console.error('Error initializing database:', error);
+    if (error instanceof Error) {
+      console.error('Error name:', error.name);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
   } finally {
     if (connection) {
       await connection.end();

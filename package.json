@@ -2,12 +2,13 @@
   "name": "infolly-ticket-system",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "data:import": "ts-node scripts/init-db.ts"
+    "data:import": "node --loader ts-node/esm scripts/init-db.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
