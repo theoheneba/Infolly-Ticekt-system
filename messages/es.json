@@ -9,6 +9,18 @@
     "list": "Mis Tickets",
     "subject": "Asunto",
     "message": "Mensaje"
+  },
+  "nav": {
+    "home": "Inicio",
+    "myTickets": "Mis Tickets",
+    "login": "Iniciar Sesión"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión"
+  },
+  "admin": {
+    "dashboard": "Panel de Administración"
   }
 }
 

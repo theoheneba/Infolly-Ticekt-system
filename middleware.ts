@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const intlMiddleware = createMiddleware({
   locales: ['en', 'es'],
@@ -7,6 +7,20 @@ const intlMiddleware = createMiddleware({
 });
 
 export default function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  
+  // Debug log
+  console.log('Middleware called for path:', pathname);
+
+  // Skip middleware for specific paths
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname.includes('.')
+  ) {
+    return NextResponse.next();
+  }
+
   return intlMiddleware(request);
 }
 
