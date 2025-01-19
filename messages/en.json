@@ -1,26 +1,92 @@
 {
   "common": {
+    "welcome": "Welcome to Infolly Ticket System",
+    "welcomeDescription": "Your one-stop solution for customer support and ticket management. Submit and track your support tickets with ease.",
     "submit": "Submit",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "submitTicket": "Submit Ticket",
+    "viewTickets": "View Tickets",
+    "fastSupport": "Fast Support",
+    "everythingYouNeed": "Everything you need for customer support",
+    "supportDescription": "Our comprehensive ticketing system provides all the tools you need to manage customer support efficiently.",
+    "easyTicketSubmission": "Easy Ticket Submission",
+    "easyTicketSubmissionDescription": "Submit support tickets quickly and easily with our intuitive interface.",
+    "dedicatedSupport": "Dedicated Support",
+    "dedicatedSupportDescription": "Get help from our dedicated team of support professionals.",
+    "insightfulAnalytics": "Insightful Analytics",
+    "insightfulAnalyticsDescription": "Track and analyze support metrics to improve your service.",
+    "viewAnalytics": "View Analytics",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "myAccount": "My Account",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "settings": "Settings",
+    "profile": "Profile",
+    "signOut": "Sign Out"
+  },
+  "nav": {
+    "home": "Home",
+    "myTickets": "My Tickets",
+    "login": "Login",
+    "signOut": "Sign Out",
+    "profileSettings": "Profile Settings",
+    "adminDashboard": "Admin Dashboard"
   },
   "tickets": {
     "create": "Create Ticket",
     "list": "My Tickets",
     "subject": "Subject",
-    "message": "Message"
-  },
-  "nav": {
-    "home": "Home",
-    "myTickets": "My Tickets",
-    "login": "Login"
+    "message": "Message",
+    "subjectPlaceholder": "Enter ticket subject",
+    "messagePlaceholder": "Describe your issue",
+    "submitTicket": "Submit Ticket",
+    "ticketSubmitted": "Ticket Submitted",
+    "ticketSubmittedDescription": "Your ticket has been submitted successfully",
+    "error": "Error",
+    "unexpectedError": "An unexpected error occurred",
+    "created": "Created",
+    "ticketId": "Ticket ID",
+    "ticketNotFound": "Ticket not found",
+    "status": "Status",
+    "priority": "Priority",
+    "assignedTo": "Assigned To",
+    "loginRequired": "You need to be logged in to submit a ticket"
   },
   "auth": {
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account",
+    "enterCredentials": "Enter your credentials to continue",
+    "enterDetails": "Enter your details to create an account",
+    "error": "Error",
+    "invalidCredentials": "Invalid email or password",
+    "unexpectedError": "An unexpected error occurred",
+    "accountCreated": "Account Created",
+    "accountCreatedDescription": "Your account has been created successfully",
+    "welcomeBack": "Welcome back"
   },
-  "admin": {
-    "dashboard": "Admin Dashboard"
+  "messages": {
+    "messages": "Messages",
+    "supportAgent": "Support Agent",
+    "you": "You",
+    "replySuccess": "Reply Sent",
+    "replySuccessDescription": "Your reply has been sent successfully",
+    "replyError": "Error",
+    "replyErrorDescription": "Failed to send reply",
+    "addReply": "Add Reply",
+    "replyPlaceholder": "Type your reply here",
+    "attachmentHelp": "You can attach files to your reply",
+    "sending": "Sending...",
+    "sendReply": "Send Reply"
   }
 }
 

@@ -1,26 +1,92 @@
 {
   "common": {
+    "welcome": "Bienvenido al Sistema de Tickets Infolly",
+    "welcomeDescription": "Su solución integral para soporte al cliente y gestión de tickets. Envíe y rastree sus tickets de soporte con facilidad.",
     "submit": "Enviar",
     "cancel": "Cancelar",
-    "save": "Guardar"
+    "save": "Guardar",
+    "submitTicket": "Enviar Ticket",
+    "viewTickets": "Ver Tickets",
+    "fastSupport": "Soporte Rápido",
+    "everythingYouNeed": "Todo lo que necesita para el soporte al cliente",
+    "supportDescription": "Nuestro sistema integral de tickets proporciona todas las herramientas necesarias para gestionar el soporte al cliente de manera eficiente.",
+    "easyTicketSubmission": "Envío Fácil de Tickets",
+    "easyTicketSubmissionDescription": "Envíe tickets de soporte de forma rápida y sencilla con nuestra interfaz intuitiva.",
+    "dedicatedSupport": "Soporte Dedicado",
+    "dedicatedSupportDescription": "Obtenga ayuda de nuestro equipo dedicado de profesionales de soporte.",
+    "insightfulAnalytics": "Análisis Perspicaz",
+    "insightfulAnalyticsDescription": "Rastree y analice métricas de soporte para mejorar su servicio.",
+    "viewAnalytics": "Ver Análisis",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "register": "Registrarse",
+    "myAccount": "Mi Cuenta",
+    "dashboard": "Panel",
+    "admin": "Administrador",
+    "settings": "Configuración",
+    "profile": "Perfil",
+    "signOut": "Cerrar Sesión"
+  },
+  "nav": {
+    "home": "Inicio",
+    "myTickets": "Mis Tickets",
+    "login": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "profileSettings": "Configuración del Perfil",
+    "adminDashboard": "Panel de Administración"
   },
   "tickets": {
     "create": "Crear Ticket",
     "list": "Mis Tickets",
     "subject": "Asunto",
-    "message": "Mensaje"
-  },
-  "nav": {
-    "home": "Inicio",
-    "myTickets": "Mis Tickets",
-    "login": "Iniciar Sesión"
+    "message": "Mensaje",
+    "subjectPlaceholder": "Ingrese el asunto del ticket",
+    "messagePlaceholder": "Describa su problema",
+    "submitTicket": "Enviar Ticket",
+    "ticketSubmitted": "Ticket Enviado",
+    "ticketSubmittedDescription": "Su ticket ha sido enviado exitosamente",
+    "error": "Error",
+    "unexpectedError": "Ocurrió un error inesperado",
+    "created": "Creado",
+    "ticketId": "ID del Ticket",
+    "ticketNotFound": "Ticket no encontrado",
+    "status": "Estado",
+    "priority": "Prioridad",
+    "assignedTo": "Asignado a",
+    "loginRequired": "Debe iniciar sesión para enviar un ticket"
   },
   "auth": {
     "login": "Iniciar Sesión",
-    "logout": "Cerrar Sesión"
+    "logout": "Cerrar Sesión",
+    "register": "Registrarse",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "name": "Nombre",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "createAccount": "Crear Cuenta",
+    "enterCredentials": "Ingrese sus credenciales para continuar",
+    "enterDetails": "Ingrese sus datos para crear una cuenta",
+    "error": "Error",
+    "invalidCredentials": "Correo electrónico o contraseña inválidos",
+    "unexpectedError": "Ocurrió un error inesperado",
+    "accountCreated": "Cuenta Creada",
+    "accountCreatedDescription": "Su cuenta ha sido creada exitosamente",
+    "welcomeBack": "Bienvenido de nuevo"
   },
-  "admin": {
-    "dashboard": "Panel de Administración"
+  "messages": {
+    "messages": "Mensajes",
+    "supportAgent": "Agente de Soporte",
+    "you": "Usted",
+    "replySuccess": "Respuesta Enviada",
+    "replySuccessDescription": "Su respuesta ha sido enviada exitosamente",
+    "replyError": "Error",
+    "replyErrorDescription": "Error al enviar la respuesta",
+    "addReply": "Agregar Respuesta",
+    "replyPlaceholder": "Escriba su respuesta aquí",
+    "attachmentHelp": "Puede adjuntar archivos a su respuesta",
+    "sending": "Enviando...",
+    "sendReply": "Enviar Respuesta"
   }
 }
 
