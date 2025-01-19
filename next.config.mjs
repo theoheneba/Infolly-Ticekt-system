@@ -1,6 +1,6 @@
 import createNextIntlPlugin from 'next-intl/plugin';
-
-const withNextIntl = createNextIntlPlugin();
+ 
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,9 +11,6 @@ const nextConfig = {
     MYSQL_PASSWORD: process.env.MYSQL_PASSWORD,
     MYSQL_DATABASE: process.env.MYSQL_DATABASE,
     UPLOAD_DIR: process.env.UPLOAD_DIR,
-  },
-  experimental: {
-    // Add any valid experimental options here if needed
   },
 };
 

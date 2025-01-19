@@ -11,6 +11,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { toast } from '@/components/ui/use-toast'
 import { submitTicket } from '@/app/actions'
+import { useTranslations } from 'next-intl'
 
 const formSchema = z.object({
   subject: z.string().min(5, {
@@ -21,8 +22,9 @@ const formSchema = z.object({
   }),
 })
 
-export function SubmitTicketForm() {
+export function SubmitTicketForm({ locale }: { locale: string }) {
   const router = useRouter()
+  const t = useTranslations('tickets')
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,14 +37,14 @@ export function SubmitTicketForm() {
     try {
       await submitTicket(values.subject, values.message)
       toast({
-        title: "Ticket submitted successfully",
-        description: "We'll get back to you as soon as possible.",
+        title: t('ticketSubmitted'),
+        description: t('ticketSubmittedDescription'),
       })
-      router.push('/tickets')
+      router.push(`/${locale}/tickets`)
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        title: t('error'),
+        description: t('unexpectedError'),
         variant: "destructive",
       })
     }
@@ -56,9 +58,9 @@ export function SubmitTicketForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>{t('subject')}</FormLabel>
               <FormControl>
-                <Input placeholder="Brief description of your issue" {...field} />
+                <Input placeholder={t('subjectPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -69,10 +71,10 @@ export function SubmitTicketForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{t('message')}</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Provide details about your issue" 
+                  placeholder={t('messagePlaceholder')}
                   className="min-h-[200px]"
                   {...field} 
                 />
@@ -81,7 +83,7 @@ export function SubmitTicketForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">Submit Ticket</Button>
+        <Button type="submit" className="w-full">{t('submitTicket')}</Button>
       </form>
     </Form>
   )

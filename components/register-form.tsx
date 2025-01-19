@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { toast } from '@/components/ui/use-toast'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Icons } from '@/components/ui/icons'
+import { useTranslations } from 'next-intl'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -24,9 +25,10 @@ const formSchema = z.object({
   }),
 })
 
-export function RegisterForm() {
+export function RegisterForm({ locale }: { locale: string }) {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const t = useTranslations('auth')
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,22 +50,22 @@ export function RegisterForm() {
 
       if (response.ok) {
         toast({
-          title: "Account created successfully",
-          description: "You can now log in with your new account.",
+          title: t('accountCreated'),
+          description: t('accountCreatedDescription'),
         })
-        router.push('/login')
+        router.push(`/${locale}/login`)
       } else {
         const data = await response.json()
         toast({
-          title: "Error",
-          description: data.message || "Something went wrong. Please try again.",
+          title: t('error'),
+          description: data.message || t('unexpectedError'),
           variant: "destructive",
         })
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        title: t('error'),
+        description: t('unexpectedError'),
         variant: "destructive",
       })
     } finally {
@@ -72,10 +74,10 @@ export function RegisterForm() {
   }
 
   return (
-    <Card className="w-[350px]">
+    <Card>
       <CardHeader>
-        <CardTitle>Create an account</CardTitle>
-        <CardDescription>Enter your details to sign up</CardDescription>
+        <CardTitle>{t('createAccount')}</CardTitle>
+        <CardDescription>{t('enterDetails')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -85,7 +87,7 @@ export function RegisterForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t('name')}</FormLabel>
                   <FormControl>
                     <Input placeholder="John Doe" {...field} />
                   </FormControl>
@@ -98,7 +100,7 @@ export function RegisterForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('email')}</FormLabel>
                   <FormControl>
                     <Input placeholder="john@example.com" {...field} />
                   </FormControl>
@@ -111,7 +113,7 @@ export function RegisterForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t('password')}</FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
@@ -123,7 +125,7 @@ export function RegisterForm() {
               {isLoading && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}
-              Sign Up
+              {t('signUp')}
             </Button>
           </form>
         </Form>

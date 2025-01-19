@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import { useTranslations } from 'next-intl'
 
 interface User {
   name?: string | null
@@ -20,6 +21,8 @@ interface User {
 }
 
 export function UserNav({ user }: { user: User }) {
+  const t = useTranslations('nav')
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -39,14 +42,14 @@ export function UserNav({ user }: { user: User }) {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href="/tickets">My Tickets</Link>
+          <Link href="/tickets">{t('myTickets')}</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/profile">Profile Settings</Link>
+          <Link href="/profile">{t('profileSettings')}</Link>
         </DropdownMenuItem>
         {user.role === 'admin' && (
           <DropdownMenuItem asChild>
-            <Link href="/admin">Admin Dashboard</Link>
+            <Link href="/admin">{t('adminDashboard')}</Link>
           </DropdownMenuItem>
         )}
         <DropdownMenuSeparator />
@@ -57,7 +60,7 @@ export function UserNav({ user }: { user: User }) {
             signOut()
           }}
         >
-          Sign out
+          {t('signOut')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

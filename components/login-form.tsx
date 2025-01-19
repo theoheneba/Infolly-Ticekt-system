@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { toast } from '@/components/ui/use-toast'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Icons } from '@/components/ui/icons'
+import { useTranslations } from 'next-intl'
 
 const formSchema = z.object({
   email: z.string().email({
@@ -22,9 +23,10 @@ const formSchema = z.object({
   }),
 })
 
-export function LoginForm() {
+export function LoginForm({ locale }: { locale: string }) {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const t = useTranslations('auth')
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,18 +46,18 @@ export function LoginForm() {
 
       if (result?.error) {
         toast({
-          title: "Error",
-          description: "Invalid email or password",
+          title: t('error'),
+          description: t('invalidCredentials'),
           variant: "destructive",
         })
       } else {
-        router.push('/dashboard')
+        router.push(`/${locale}/dashboard`)
         router.refresh()
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        title: t('error'),
+        description: t('unexpectedError'),
         variant: "destructive",
       })
     } finally {
@@ -64,10 +66,10 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="w-[350px]">
+    <Card>
       <CardHeader>
-        <CardTitle>Sign In</CardTitle>
-        <CardDescription>Enter your credentials to access your account</CardDescription>
+        <CardTitle>{t('signIn')}</CardTitle>
+        <CardDescription>{t('enterCredentials')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -77,7 +79,7 @@ export function LoginForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('email')}</FormLabel>
                   <FormControl>
                     <Input placeholder="john@example.com" {...field} />
                   </FormControl>
@@ -90,7 +92,7 @@ export function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t('password')}</FormLabel>
                   <FormControl>
                     <Input type="password" {...field} />
                   </FormControl>
@@ -102,7 +104,7 @@ export function LoginForm() {
               {isLoading && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}
-              Sign In
+              {t('signIn')}
             </Button>
           </form>
         </Form>
