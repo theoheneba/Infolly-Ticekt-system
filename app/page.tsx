@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-5xl font-extrabold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-        Welcome to Infolly Ticket System.
+        Welcome to Infolly Ticket System..
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Card className="hover:shadow-lg transition-shadow duration-300">
